@@ -9,17 +9,17 @@ version '1.0.0'
 
 -- What to run
 client_scripts {
-    'weather_c.lua',
-    'car_c.lua',
+    'c-weather.lua',
+    'c-car.lua',
     'c-location.lua',
     'c-money.lua',
     'c-shop.lua',
     'utils.lua',
-    'spawn_c.lua',
+    'c-spawn.lua',
     'test.lua',
     'item.lua',
     'c-weapon.lua',
-    'somescript_c.lua',
+    'c-somescript.lua',
     
     
 }

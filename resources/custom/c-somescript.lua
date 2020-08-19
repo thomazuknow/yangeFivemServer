@@ -1,0 +1,46 @@
+function msg(test) TriggerEvent("chatMessage", "[Server]", {255, 0, 0}, test) end
+
+RegisterCommand("die", function()
+    SetEntityHealth(GetPedAndCoords().pedId, 0)
+    print("you died")
+end, false)
+
+RegisterCommand("citem", function()
+    print('########A')
+    a = Item:new("Weapon", "Pistol", "weapon_pistol", 200)
+    print(a)
+    print(a.name)
+    print(a.code)
+    print(a.itemType)
+    print(a.price)
+    print("type", type(a))
+    print("", getmetatable(a))
+    print('')
+    print('########C')
+    c = Item:new("Weapon", "Pistol2", "weapon_pistol2", 250)
+    print(c)
+    print(c.name)
+    print(c.code)
+    print("type", type(c))
+    print("metadata", getmetatable(c))
+
+    assert(a ~= c, "A should not be the same as C")
+    assert(a.name ~= c.name, "name is the same")
+
+    c:setName("apa")
+    print(c)
+    print(c.name)
+    print(c.code)
+    print(c.itemType)
+    print(c.price)
+    print("type", type(c))
+    print("metadata", getmetatable(c))
+    print(a.price)
+    print(a.price)
+    print(a.price)
+
+    local tempList = {a, c}
+    local itemApa = findItemByName(tempList, "apa")
+    print("Item from findList: ", itemApa.name)
+
+end)

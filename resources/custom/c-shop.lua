@@ -1,27 +1,3 @@
--- list all able items
--- buy item
--- in check if founds exist
--- in cmoney addmoney overdraw protection
--- remove tha money
--- if OK then add the item to the Player
--- if NOT OK
-
-
-function getShop()
-    return createWeaponItemShop()
-end
-
-function createWeaponItemShop()
-    local pistol = getWeaponByName("Pistol")
-    pistol:setPrice(500)
-    local pwd = getWeaponByName("CombatPWD")
-    pwd:setPrice(750)
-    local shop = {}
-    shop[1] = pistol
-    shop[2] = pwd
-    return shop
-end
-
 -- chat based shop, open for a limited time by pressing the X key
 -- don't know if this appraoch of using citizen.Wait is a good idea, does it stop all other threads for the player or just this thread?
 Citizen.CreateThread(function()
@@ -83,9 +59,24 @@ Citizen.CreateThread(function()
     end
 end)
 
+function getShop()
+    return createWeaponItemShop()
+end
+
+function createWeaponItemShop()
+    local pistol = getWeaponByName("Pistol")
+    pistol:setPrice(500)
+    local pwd = getWeaponByName("CombatPWD")
+    pwd:setPrice(750)
+    local shop = {}
+    shop[1] = pistol
+    shop[2] = pwd
+    return shop
+end
+
 
 function delay(cycles)
-    -- create some delay after pruchase 
+    -- create some delay after pruchase
     Citizen.Wait(1000)
     return cycles + 20
 end

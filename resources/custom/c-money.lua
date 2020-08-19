@@ -1,6 +1,6 @@
 
--- after the lack of infomartion about the 'PedMoney' natives I feelk like most server would probably implement
--- their own soulution for keep track of founds.
+-- after the lack of infomartion about the 'PedMoney' natives I feel like most server would probably implement
+-- their own soulution for keep track of funds.
 
 
 

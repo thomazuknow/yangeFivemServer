@@ -10,7 +10,26 @@ function tableContainsKey(table, val)
     return false
 end
 
+-- note! tableContainsKey should be more like this one.. 
+function tableContainsValue(table, val)
+    local value = nil
+    if isString(val) then
+        value = tostring(val):lower();
+    else
+        value = val
+    end
+    for i,v in pairs(table) do
+        if isString(v) then
+            v = tostring(v):lower();
+        end
+        if value == v then return true end
+    end
+    print( value,' was not found in table')
+    return false
+end
+
 function isNumber(value) return type(value) == "number" end
+function isString(value) return type(value) == "string" end
 
 function tryParseNumber(value)
     if isNumber(value) then return true, value end
@@ -43,3 +62,6 @@ function printDebug(msg)
     if Debug then print(msg) end
 end
 
+function msg(test) 
+    TriggerEvent("chatMessage", "[Server]", {255, 0, 0}, test)
+end

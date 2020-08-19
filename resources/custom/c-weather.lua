@@ -1,5 +1,3 @@
-
-
 local weathers =
     {
         "CLEAR",
@@ -28,8 +26,8 @@ RegisterCommand("setWeather", function(source, args)
 
 
 function setCurrentWeather(args)
-    local weather = args[1];
-    local validWeather = exports[GetCurrentResourceName()]:tableContainsKey(weathers, weather);
+    local weather = tostring(args[1]);
+    local validWeather = tableContainsValue(weathers, weather);
     if  validWeather then
         SetOverrideWeather(weather);
     else
@@ -39,9 +37,9 @@ function setCurrentWeather(args)
     end
 end
 
--- function getCurrentWeather()
---     local weather = GetHashKey(GetPrevWeatherTypeHashName());
---     TriggerEvent("chatMessage", "[ServerDebug]", {255,0,0}, weather)
--- end
+function getCurrentWeather()
+    local weather = GetHashKey(GetPrevWeatherTypeHashName());
+    TriggerEvent("chatMessage", "[ServerDebug]", {255,0,0}, weather)
+end
 
 

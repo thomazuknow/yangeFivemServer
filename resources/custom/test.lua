@@ -1,27 +1,3 @@
--- Account = {}
--- Account.__index = Account
--- Account = class(function(acc, balance, name)
---     acc.balance = balance
---     acc.name = name
--- end)
--- function Account:create(o, name, balance)
---     o = o or {} -- our new object
---     setmetatable(acnt, self) -- make Account handle lookup
---     self.__index = self
---     acnt.balance = balance -- initialize our object
---     actn.name = name
---     return acnt
--- end
--- function Account:withdraw(amount) self.balance = self.balance - amount end
--- function Account:setName(name) self.name = name; end
--- RegisterCommand("test3", function()
---     local acc = Account:create("konto1", 1000)
---     print(acc.name)
---     print(acc.balance)
---     acc.withdraw(100)
---     acc.setName("konto2000")
---     print(acc.balance)
--- end)
 Account = {balance = 0, name = "default"}
 
 function Account:new(o)

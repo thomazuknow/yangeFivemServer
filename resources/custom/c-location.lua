@@ -44,7 +44,7 @@ function printLocations()
     for k in pairs(Locations) do
         str = str..k..', '
     end
-    print(str:sub(1, #str-2))
+    msg(str:sub(1, #str-2))
 end
 
 

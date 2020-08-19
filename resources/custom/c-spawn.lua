@@ -1,4 +1,4 @@
--- not my script
+-- not my script, seams broken, when ped dies it wont respawn
 local spawnPos = vector3(686.245, 577.950, 130.461)
 
 AddEventHandler('onClientGameTypeStart', function()
@@ -21,11 +21,3 @@ end)
 
 
 
-RegisterCommand("test2", function()
-    acc = Account:create("konto1", 1000)
-    print(acc.name)
-    print(acc.balance)
-    acc.withdraw(100)
-    print(acc.balance)
-
-end)
